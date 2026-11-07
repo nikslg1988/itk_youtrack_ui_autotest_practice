@@ -1,0 +1,13 @@
+
+services:
+  youtrack:
+    image: jetbrains/youtrack:2026.2.19562
+    container_name: youtrack
+    ports:
+      - "8080:8080"
+    volumes:
+      - /home/nikslg/youtrack-data/data:/opt/youtrack/data
+      - /home/nikslg/youtrack-data/conf:/opt/youtrack/conf
+      - /home/nikslg/youtrack-data/logs:/opt/youtrack/logs
+      - /home/nikslg/youtrack-data/backups:/opt/youtrack/backups
+    restart: unless-stopped
